@@ -1,67 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
     <head>
-        <title>
-            跳转到: 广告招商表单
+        <title id="t_title">
+            跳转到: {to_name}
         </title>
         <meta charset="utf-8">
-        <script src="ads.js"></script>
-        <script src="detectAdBlock.js"></script>
+
         <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-        }
-        h1 {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #4CAF50;
-            background-color: transparent;
-            cursor: pointer;
-            margin-right: 10px;
-            border: 2px solid #4CAF50;
-            transition: all 0.3s ease-in-out;
-        }
-        button:hover {
-            color: #fff;
-            background-color: #4CAF50;
-        }
-        button:last-child {
-            color: #f44336;
-            border-color: #f44336;
-        }
-        button:last-child:hover {
-            color: #fff;
-            background-color: #f44336;
-        }
-    </style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f2f2f2;
+            }
+
+            h1 {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            button {
+                padding: 10px 20px;
+                /*border: none;*/
+                border-radius: 5px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #4CAF50;
+                background-color: transparent;
+                cursor: pointer;
+                margin-right: 10px;
+                border: 2px solid #4CAF50;
+                transition: all 0.3s ease-in-out;
+            }
+
+            button:hover {
+                color: #fff;
+                background-color: #4CAF50;
+            }
+
+            button:last-child {
+                color: #f44336;
+                border-color: #f44336;
+            }
+
+            button:last-child:hover {
+                color: #fff;
+                background-color: #f44336;
+            }
+
+            .red {
+                color: red;
+            }
+        </style>
 
     </head>
     <body>
-        <h1>广告招商表单填写地址</h1>
-        <p>desc</p>
-        <button onclick="window.location.href='https://www.wenjuan.com/s/UZBZJvIKO21/#'">链接1 (推荐使用)</button>
-        <br />
-        <button onclick="window.location.href='https://shimo.im/forms/w8RvYW6YPWGWVjKR/fill?channel=ad'">链接2 (不推荐使用)</button>
+        <h1>即将前往<span id="to_id1"></span>。</h1>
+        <p id="sys_info" class="red"></p>
+        <p>完整链接: <span id="to_url1"></span></p>
+        <p>你确定要打开吗? 此链接可能已失效, 请谨慎打开! </p>
+        <p class="red">反诈提示: 请不要随意打开陌生人发来的网址! </p>
+
+        <button onclick="go_to(to_url);">立即跳转</button>
+        <br>
+        <button onclick="window.close()">关闭页面</button>
+        <br>
+        <a href="javascript:void(0);" onclick="history.back()">返回上一页</a>
     </body>
+    <script src="js/main.js"></script>
 </html>
