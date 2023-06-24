@@ -21,7 +21,13 @@ function set_info(content) {
     document.getElementById("sys_info").innerHTML = "系统提示: " + content;
 }
 function go_to(url) {
-    window.location.href=url;
+    console.log("向用户发出跳转到 ", url , "的请求");
+    const res = window.confirm("确定要跳转吗? ");
+    if (res) {
+        window.location.href = url;
+    } else {
+        console.info("用户已取消跳转");
+    }
 
 }
 
