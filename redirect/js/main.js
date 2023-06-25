@@ -13,6 +13,7 @@ function getUrlParam(name) {
     return "神秘网站";
     //return null;
 }
+
 function set_info(content) {
     sys_info = content;
     if (content === "") {
@@ -20,8 +21,13 @@ function set_info(content) {
     }
     document.getElementById("sys_info").innerHTML = "系统提示: " + content;
 }
+
 function go_to(url) {
-    console.log("向用户发出跳转到 ", url , "的请求");
+    const dict = {
+        to_url: url,
+        to_name: to_name
+    };
+    console.log("向用户发出跳转到 " + url + "的请求", dict);
     const res = window.confirm("确定要跳转吗? ");
     if (res) {
         window.location.href = url;

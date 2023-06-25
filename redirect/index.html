@@ -2,9 +2,14 @@
 <html lang="zh">
     <head>
         <title id="t_title">
-            跳转到: {to_name}
+            跳转到: {{to_name}}
         </title>
         <meta charset="utf-8">
+        <!-- 新 Bootstrap5 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+
+        <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 
         <style>
             body {
@@ -71,7 +76,7 @@
         <p id="sys_info" class="red"></p>
         <p>完整链接: <span id="to_url1"></span></p>
         <p>你确定要打开吗? 此链接可能已失效, 请谨慎打开! </p>
-        <p class="red">反诈提示: 请不要随意打开陌生人发来的网址! </p>
+        <p class="red"><span class="badge bg-warning">警告</span>反诈提示: 请不要随意打开陌生人发来的网址! </p>
 
         <button onclick="go_to(to_url);">立即跳转</button>
         <br>
